@@ -1,27 +1,29 @@
 <template>
-    <div class="data-table">
+    <div>
+      <div class="data-table">
         <div class="row header-row">
-            <div class="cell">School</div>
-            <div class="cell">Division</div>
-            <div class="cell">Conference</div>
-            <div class="cell">Ranking</div>
-            <div class="cell">GPA</div>
-            <div class="cell">SAT Reading</div>
-            <div class="cell">SAT Math</div>
-            <div class="cell">ACT</div>
+          <div class="cell">School</div>
+          <div class="cell">Division</div>
+          <div class="cell">Conference</div>
+          <div class="cell">Ranking</div>
+          <div class="cell">GPA</div>
+          <div class="cell">SAT Reading</div>
+          <div class="cell">SAT Math</div>
+          <div class="cell">ACT</div>
         </div>
         <div class="row" v-for="(athlete, index) in athleteReport" :key="index" :class="{ 'even-row': index % 2 === 1 }">
-            <div class="cell">{{ athlete.school }}</div>
-            <div class="cell">{{ athlete.division }}</div>
-            <div class="cell">{{ athlete.conference }}</div>
-            <div class="cell">{{ athlete.ranking }}</div>
-            <div class="cell">
-                <GPA :athlete="athleteInfo" :athleteGpa="athlete.gpa" />
-            </div>
-            <div class="cell">{{ athlete.sat.reading.min === "N/A" ? "Not Reported" : `${athlete.sat.reading.min}-${athlete.sat.reading.max}` }}</div>
-            <div class="cell">{{ athlete.sat.math.min === "N/A" ? "Not Reported" : `${athlete.sat.math.min}-${athlete.sat.math.max}` }}</div>
-            <div class="cell">{{ athlete.act.min === "N/A" ? "Not Reported" : `${athlete.act.min}-${athlete.act.max}` }}</div>
+          <div class="cell">{{ athlete.school }}</div>
+          <div class="cell">{{ athlete.division }}</div>
+          <div class="cell">{{ athlete.conference }}</div>
+          <div class="cell">{{ athlete.ranking }}</div>
+          <div class="cell">
+            <GPA :athlete="athleteInfo" :athleteGpa="athlete.gpa" />
+          </div>
+          <div class="cell">{{ athlete.sat.reading.min === "N/A" ? "Not Reported" : `${athlete.sat.reading.min}-${athlete.sat.reading.max}` }}</div>
+          <div class="cell">{{ athlete.sat.math.min === "N/A" ? "Not Reported" : `${athlete.sat.math.min}-${athlete.sat.math.max}` }}</div>
+          <div class="cell">{{ athlete.act.min === "N/A" ? "Not Reported" : `${athlete.act.min}-${athlete.act.max}` }}</div>
         </div>
+      </div>
     </div>
 </template>
 
@@ -64,7 +66,7 @@ export default defineComponent({
 }
 .row {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: 253px 75px 253px 75px repeat(4, 1fr);
   width: 100%;
 }
 .header-row {

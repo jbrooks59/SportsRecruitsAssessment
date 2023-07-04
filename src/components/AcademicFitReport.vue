@@ -70,6 +70,7 @@ export default {
       const lastName = athleteName.value.substring(space + 1);
       return `${firstName.charAt(0)}${lastName.charAt(0)}`;
     });
+    // const initials
 
     const updateAthleteName = (event) => {
       athleteName.value = event.target.innerText;
