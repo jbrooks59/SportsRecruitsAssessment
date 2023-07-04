@@ -1,8 +1,5 @@
 <template>
     <div>
-<!--      <div class="row" v-for="(athlete, index) in athleteReport" :key="index">-->
-<!--        {{ athlete.gpa.min }}-->
-<!--      </div>-->
         <div class="row">
           <div>{{ athleteGpa.min }}</div>
           <div>{{ athleteGpa["25%"] }}</div>

@@ -93,9 +93,9 @@ export default {
 <style scoped>
 .info {
   display: flex;
-  flex-direction: column; /* Change flex-direction to column */
-  align-items: center; /* Center align the content */
-  margin-left: 10px; /* Adjust the margin */
+  flex-direction: column;
+  align-items: center;
+  margin-left: 10px;
 }
 
 .info img {
@@ -103,7 +103,7 @@ export default {
   width: 98px;
   border-radius: 50%;
   align-self: center;
-  margin-bottom: 10px; /* Add margin-bottom to create space between image and info */
+  margin-bottom: 10px;
 }
 
 .profile-image {
@@ -130,15 +130,15 @@ export default {
 .info-column-one,
 .info-column-two {
   display: flex;
-  flex-direction: column; /* Change flex-direction to column */
-  align-items: center; /* Center align the content */
-  margin-bottom: 20px; /* Add margin-bottom to create space between columns */
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .info ul {
   list-style: none;
   padding-left: 10px;
-  margin: 0; /* Reset margin */
+  margin: 0;
 }
 
 .info ul li {
@@ -157,7 +157,6 @@ export default {
 }
 
 @media (min-width: 651px) {
-  /* Styles for screen sizes above 650px */
   .info {
     flex-direction: row;
     align-items: flex-end;
