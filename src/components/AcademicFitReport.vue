@@ -70,7 +70,46 @@ export default {
       const lastName = athleteName.value.substring(space + 1);
       return `${firstName.charAt(0)}${lastName.charAt(0)}`;
     });
-    // const initials
+    const initialsBackgroundColor = computed(() => {
+      const space = athleteName.value.indexOf(" ");
+      const lastNameInitial = athleteName.value.substring(space + 1).charAt(0).toLowerCase();
+      switch (lastNameInitial) {
+        case "a":
+        case "b":
+        case "c":
+        case "d":
+        case "e":
+          return "#f1603c";
+        case "f":
+        case "g":
+        case "h":
+        case "i":
+        case "j":
+          return "#6082fa";
+        case "k":
+        case "l":
+        case "m":
+        case "n":
+        case "o":
+          return "#827cb8";
+        case "p":
+        case "q":
+        case "r":
+        case "s":
+          return "#0097a4";
+        case "t":
+        case "u":
+        case "v":
+        case "w":
+          return "#ffe066";
+        case "x":
+        case "y":
+        case "z":
+          return "#ffa94d";
+        default:
+          return "#ccc"
+      }
+    })
 
     const updateAthleteName = (event) => {
       athleteName.value = event.target.innerText;
@@ -87,6 +126,7 @@ export default {
       athleteMajor,
       athleteInitials,
       updateAthleteName,
+      initialsBackgroundColor
     };
   },
 };
@@ -115,10 +155,11 @@ export default {
   width: 98px;
   height: 98px;
   border-radius: 50%;
-  background-color: #ccc;
+  background-color: v-bind(initialsBackgroundColor);
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .profile-image.no-image .initials {
