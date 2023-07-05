@@ -37,7 +37,7 @@ html {
 }
 .container {
   @media (min-width: 1800px) {
-    width: 65%;
+    width: 75%;
   }
 }
 .belowInfo {

@@ -112,7 +112,18 @@ export default {
     })
 
     const updateAthleteName = (event) => {
-      athleteName.value = event.target.innerText;
+      const text = event.target.innerText;
+      athleteName.value = text.replace(/[\n\r]/g, "").trim();
+      setCursorToEnd(event.target);
+    };
+
+    const setCursorToEnd = (element) => {
+      const range = document.createRange();
+      const selection = window.getSelection();
+      range.selectNodeContents(element);
+      range.collapse(false);
+      selection.removeAllRanges();
+      selection.addRange(range);
     };
 
     return {

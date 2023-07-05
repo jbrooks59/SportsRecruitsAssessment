@@ -1,13 +1,20 @@
 <template>
-    <div>
-        <div class="row">
-          <div>{{ athleteGpa.min }}</div>
-          <div>{{ athleteGpa["25%"] }}</div>
-          <div :style="{ background: gpaColor }">{{ athleteGpa["50%"] }}</div>
-          <div>{{ athleteGpa["75%"] }}</div>
-          <div>{{ athleteGpa.max }}</div>
-        </div>
+  <div>
+    <div style="margin-top: -14px" v-if="index === 0" class="row" :style="{ color: 'white' }">
+      <div class="head text">Min</div>
+      <div class="head text">25%</div>
+      <div class="head text">50%</div>
+      <div class="head text">75%</div>
+      <div class="head">Max</div>
     </div>
+    <div class="row">
+      <div class="gpa text">{{ athleteGpa.min }}</div>
+      <div class="gpa text">{{ athleteGpa["25%"] }}</div>
+      <div style="width: 30px" class="gpa text" :style="{ background: gpaColor }">{{ athleteGpa["50%"] }}</div>
+      <div class="gpa text">{{ athleteGpa["75%"] }}</div>
+      <div class="gpa">{{ athleteGpa.max }}</div>
+    </div>
+  </div>
 </template>
 <script>
 import { computed } from "vue";
@@ -24,6 +31,10 @@ export default defineComponent({
             type: Object,
             required: false,
         },
+        index: {
+          type: Number,
+          required: false,
+        }
     },
     setup(props) {
       const athleteReport = computed(() => props.athlete.report);
@@ -54,7 +65,18 @@ export default defineComponent({
 <style scoped>
 .row {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   width: 100%;
+}
+.text {
+  margin-right: 5px;
+  justify-self: center;
+}
+.head {
+  justify-self: center;
+}
+.gpa {
+  padding: 10px 0;
+  justify-self: center;
 }
 </style>
